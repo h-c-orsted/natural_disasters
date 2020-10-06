@@ -3,6 +3,7 @@ class InputField {
   int x, y;
   int w = 300, h = 50; 
   boolean isActive;
+  boolean enterPressed = false;
   String text = "";
   float padding = 8;
   
@@ -37,7 +38,7 @@ class InputField {
       if (key == BACKSPACE) {
         // If there is any letters, remove one
         if (text.length()-1 > -1) text = text.substring(0, text.length()-1);
-      } else if (key == CODED) {
+      } else if (key == CODED || key == ENTER) {
         // Do nothing. The key is a modifier like ctrl or shift
       } else {
         text += t;
